@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aguinha"
         mc:Ignorable="d"
-        Title="MainWindow" Height="465" Width="800" ResizeMode="NoResize">
+        Title="Aguinha" Height="465" Width="800" ResizeMode="NoResize">
     <Grid Background="#FF395C9B">
         <ProgressBar Name="DailyWaterGoalBar" Margin="-19,209,531,0" Height="100" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FFC5D6D6">
             <ProgressBar.RenderTransform>
@@ -36,6 +36,18 @@
         </Button>
         <Image Name="GlassImage" Height="279" Margin="257,43,0,0" VerticalAlignment="Top" Stretch="Uniform" HorizontalAlignment="Left" Width="248"/>
         <ComboBox Name="GlassDropdown" HorizontalAlignment="Left" Height="31" Margin="285,341,0,0" VerticalAlignment="Top" Width="192" SelectionChanged="GlassDropdown_SelectionChanged"/>
+        <Button Content="Toast" Margin="0,382,44,0" HorizontalAlignment="Right" Width="150" Height="40" VerticalAlignment="Top" Click="DrinkWaterButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF90B1EA"/>
+                    <GradientStop Color="#FF37F9C4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="Meta diária:&#xD;&#xA;" HorizontalAlignment="Left" Margin="587,34,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
+        <Label Content="2500 mL&#xA;" HorizontalAlignment="Left" Margin="587,63,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
+        <Label Content="Próximo alerta em:&#xA;" HorizontalAlignment="Left" Margin="587,137,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
+        <Label Content="00:00:00&#xA;" HorizontalAlignment="Left" Margin="587,166,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
 
     </Grid>
 </Window>
