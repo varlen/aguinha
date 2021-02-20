@@ -24,5 +24,10 @@ namespace Aguinha
         {
             InitializeComponent();
         }
+
+        private void DrinkWaterButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.DailyWaterGoalBar.Value += 10;
+        }
     }
 }

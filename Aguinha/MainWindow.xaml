@@ -5,14 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Aguinha"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="#FF395C9B" Margin="0,0,-95,7">
-        <ProgressBar Margin="40,300,40,0" Height="40" VerticalAlignment="Top">
+        Title="MainWindow" Height="465" Width="800" ResizeMode="NoResize">
+    <Grid Background="#FF395C9B">
+        <ProgressBar Name="DailyWaterGoalBar" Margin="-19,209,531,0" Height="100" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FFFFEFDF">
+            <ProgressBar.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-90"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ProgressBar.RenderTransform>
+            <ProgressBar.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF0063C5"/>
+                    <GradientStop Color="#FF27E8FB" Offset="1"/>
+                </LinearGradientBrush>
+            </ProgressBar.Foreground>
             <ProgressBar.Style>
                 <Style/>
             </ProgressBar.Style>
         </ProgressBar>
-        <Button Content="Bebi Água" Margin="0,365,40,0" HorizontalAlignment="Right" Width="150" Height="40" VerticalAlignment="Top">
+        <Button Content="Bebi Água" Margin="0,43,591,0" HorizontalAlignment="Right" Width="150" Height="40" VerticalAlignment="Top" Click="DrinkWaterButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF90B1EA"/>
@@ -20,6 +34,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
+        <Image HorizontalAlignment="Left" Height="279" Margin="257,43,0,0" VerticalAlignment="Top" Width="248"/>
 
     </Grid>
 </Window>
