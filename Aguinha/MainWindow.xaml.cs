@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using Aguinha.Models;
+using Aguinha.Contexts;
 
 namespace Aguinha
 {
@@ -23,33 +24,42 @@ namespace Aguinha
     public partial class MainWindow : Window
     {
 
-        private List<Glass> Glasses = new List<Glass>{
-            new Glass { 
-                Name = "Copo Americano", 
-                CapacityMililiters = 200, 
-                Image = new Uri("/Images/copo americano.jpg", UriKind.Relative)
-            },
-            new Glass
-            {
-                Name = "Copão",
-                CapacityMililiters = 350,
-                Image = new Uri("/Images/pint.jpg", UriKind.Relative)
-            }
-        };
+
+
+        private WaterIntakeContext context = new WaterIntakeContext();
 
         public MainWindow()
         {
             InitializeComponent();
 
-            this.GlassDropdown.ItemsSource = this.Glasses;
-            this.GlassDropdown.SelectedIndex = 0;
+            GlassDropdown.ItemsSource = context.Glasses;
+            GlassDropdown.SelectedIndex = 0;
+
+            DailyWaterGoalBar.Maximum = context.Intake.Goal;
         }
-
-
 
         private void DrinkWaterButton_Click(object sender, RoutedEventArgs e)
         {
-            this.DailyWaterGoalBar.Value += 10;
+            context.Drink();
+            DailyWaterGoalBar.Value = context.Intake.Current;
+        }
+
+        private void GlassDropdown_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selection = e.AddedItems[0];
+            if (selection is Glass glass)
+            {
+                context.Glass = glass;
+
+                var glassBitmapImage = new BitmapImage();
+                glassBitmapImage.BeginInit();
+                glassBitmapImage.UriSource = glass.Image;
+
+                glassBitmapImage.DecodePixelWidth = Convert.ToInt32(GlassImage.Width);
+                glassBitmapImage.EndInit();
+
+                GlassImage.Source = glassBitmapImage;
+            }
         }
     }
 }
