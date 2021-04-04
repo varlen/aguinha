@@ -35,8 +35,8 @@
             </Button.Background>
         </Button>
         <Image Name="GlassImage" Height="279" Margin="257,43,0,0" VerticalAlignment="Top" Stretch="Uniform" HorizontalAlignment="Left" Width="248"/>
-        <ComboBox Name="GlassDropdown" HorizontalAlignment="Left" Height="31" Margin="285,341,0,0" VerticalAlignment="Top" Width="192" SelectionChanged="GlassDropdown_SelectionChanged"/>
-        <Button Content="Toast" Margin="0,382,44,0" HorizontalAlignment="Right" Width="150" Height="40" VerticalAlignment="Top" Click="DrinkWaterButton_Click">
+        <ComboBox Name="GlassDropdown" HorizontalAlignment="Left" Height="21" Margin="285,341,0,0" VerticalAlignment="Top" Width="192" SelectionChanged="GlassDropdown_SelectionChanged"/>
+        <Button Content="Toast" Margin="0,382,44,0" HorizontalAlignment="Right" Width="150" Height="40" VerticalAlignment="Top" Click="ToastButton_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF90B1EA"/>
@@ -46,8 +46,18 @@
         </Button>
         <Label Content="Meta diária:&#xD;&#xA;" HorizontalAlignment="Left" Margin="587,34,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
         <Label Content="2500 mL&#xA;" HorizontalAlignment="Left" Margin="587,63,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
-        <Label Content="Próximo alerta em:&#xA;" HorizontalAlignment="Left" Margin="587,137,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
-        <Label Content="00:00:00&#xA;" HorizontalAlignment="Left" Margin="587,166,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
+        <Label Content="Próximo alerta em:&#xA;" HorizontalAlignment="Left" Margin="587,235,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
+        <Label Content="00:00:00&#xA;" HorizontalAlignment="Left" Margin="587,264,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
+        <Label Content="Atingir a meta até:&#xA;" HorizontalAlignment="Left" Margin="587,124,0,0" VerticalAlignment="Top" Width="113" Foreground="#FFE8E8E8"/>
+        <TextBox Text="18:00" TextWrapping="Wrap" Margin="0,156,155,0" MaxLines="1" Height="21" VerticalAlignment="Top" HorizontalAlignment="Right" Width="39"/>
+        <Button Content="Definir Alertas" Margin="0,154,34,0" HorizontalAlignment="Right" Width="85" Height="25" VerticalAlignment="Top" Click="DrinkWaterButton_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF90B1EA"/>
+                    <GradientStop Color="#FF37F9C4" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Window>

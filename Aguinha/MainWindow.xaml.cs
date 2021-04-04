@@ -27,6 +27,7 @@ namespace Aguinha
 
 
         private WaterIntakeContext context = new WaterIntakeContext();
+        private NotificationContext notification = new NotificationContext();
 
         public MainWindow()
         {
@@ -42,6 +43,11 @@ namespace Aguinha
         {
             context.Drink();
             DailyWaterGoalBar.Value = context.Intake.Current;
+        }
+
+        private void ToastButton_Click(object sender, RoutedEventArgs e)
+        {
+            notification.ScheduleNotification(DateTime.Now.AddSeconds(5));
         }
 
         private void GlassDropdown_SelectionChanged(object sender, SelectionChangedEventArgs e)
